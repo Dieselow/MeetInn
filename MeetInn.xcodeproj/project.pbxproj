@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F6BB112264FDF070098825B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BB111264FDF070098825B /* LoginView.swift */; };
+		3FD37026266E490800B60B10 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD37025266E490800B60B10 /* RegisterView.swift */; };
 		3FD5B424264E6A15008A560E /* MeetInnApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD5B423264E6A15008A560E /* MeetInnApp.swift */; };
 		3FD5B426264E6A15008A560E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD5B425264E6A15008A560E /* ContentView.swift */; };
 		3FD5B428264E6A16008A560E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FD5B427264E6A16008A560E /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		3F6BB111264FDF070098825B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		3FD37025266E490800B60B10 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		3FD5B420264E6A15008A560E /* MeetInn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeetInn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FD5B423264E6A15008A560E /* MeetInnApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetInnApp.swift; sourceTree = "<group>"; };
 		3FD5B425264E6A15008A560E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,6 +41,7 @@
 			isa = PBXGroup;
 			children = (
 				3F6BB111264FDF070098825B /* LoginView.swift */,
+				3FD37025266E490800B60B10 /* RegisterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F6BB112264FDF070098825B /* LoginView.swift in Sources */,
+				3FD37026266E490800B60B10 /* RegisterView.swift in Sources */,
 				3FD5B426264E6A15008A560E /* ContentView.swift in Sources */,
 				3FD5B424264E6A15008A560E /* MeetInnApp.swift in Sources */,
 			);
