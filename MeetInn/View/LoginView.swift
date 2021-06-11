@@ -11,7 +11,8 @@ struct LoginView: View {
     // MARK: - Propertiers
         @State private var email = ""
         @State private var password = ""
-        
+    @ObservedObject var viewModel = LoginViewModel()
+    @State var isSubmit = false
         // MARK: - View
         var body: some View {
             VStack() {
@@ -42,7 +43,9 @@ struct LoginView: View {
                         .shadow(radius: 10.0, x: 20, y: 10)
                 }.padding([.leading, .trailing], 27.5)
                 
-                Button(action: {}) {
+                Button(action: {
+                    LoginUserAction(email: email, password: password)
+                }) {
                     Text("Sign In")
                         .font(.headline)
                         .foregroundColor(.white)
@@ -56,10 +59,12 @@ struct LoginView: View {
                 Spacer()
                 HStack(spacing: 0) {
                     Text("Don't have an account? ")
-                    Button(action: {}) {
+                    Button(action: {self.isSubmit = true}) {
                         Text("Sign Up")
                             .foregroundColor(.black)
-                    }
+                    }.sheet(isPresented:$isSubmit , content: {
+                        RegisterView()
+                    })
                 }
             }
             .background(
@@ -67,7 +72,12 @@ struct LoginView: View {
                     .edgesIgnoringSafeArea(.all))
             
         }
+    func LoginUserAction(email: String,password: String) -> Void {
+        let user = UserLoginModel(email: email, password: password )
+        viewModel.Login(user: user)
+    }
 }
+
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {

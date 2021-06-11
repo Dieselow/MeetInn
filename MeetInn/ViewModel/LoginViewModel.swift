@@ -1,0 +1,29 @@
+//
+//  LoginViewModel.swift
+//  MeetInn
+//
+//  Created by Louis Dumont on 07/06/2021.
+//
+
+import Foundation
+class LoginViewModel: ObservableObject {
+    //@Published private(set) var user: UserDataModel?
+    @Published private(set) var user: UserModel?
+    @Published private(set) var isLoading = false
+    private var request: UserLoginRequest?
+    func Login(user: UserLoginModel) -> Void {
+        let params = ["email": user.email, "password": user.password] as Dictionary<String, String>
+
+        guard !isLoading else { return }
+                isLoading = true
+        
+
+        let resource = UserLoginResource(body: params)
+        let request = UserLoginRequest(request: resource.request)
+        self.request = request
+        request.execute { [weak self] user in
+                    self?.user = user ?? nil        
+                    self?.isLoading = false
+                }
+    }
+}
