@@ -16,9 +16,6 @@ protocol NetworkRequest: AnyObject {
 extension NetworkRequest {
     func load(_ url: URLRequest, withCompletion completion: @escaping (ModelType?) -> Void) {
         let task = URLSession.shared.dataTask(with: url) { [weak self] (data: Data?, resp: URLResponse? , err:Error?) -> Void in
-            print(resp as Any)
-            print(data as Any)
-            
             guard let data = data, let value = self?.decode(data) else {
                 DispatchQueue.main.async { completion(nil) }
                 return

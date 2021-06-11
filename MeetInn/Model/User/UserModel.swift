@@ -7,7 +7,7 @@
 
 import Foundation
 struct UserModel {
-    //let Id : String
+    let Id : String
     let email: String
     let createdAt: Date
     let expiresAt: Date
@@ -16,7 +16,7 @@ struct UserModel {
 
 extension UserModel: Decodable {
     enum CodingKeys: String, CodingKey {
-        //case Id = "id"
+        case Id = "id"
         case createdAt = "iat"
         case email = "sub"
         case roles = "roles"
