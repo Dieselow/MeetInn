@@ -6,10 +6,13 @@
 //
 
 import Foundation
+import SwiftUI
+
 class LoginViewModel: ObservableObject {
     //@Published private(set) var user: UserDataModel?
-    @Published private(set) var user: UserModel?
+    @Published private(set) var user: UserModel? 
     @Published private(set) var isLoading = false
+    @Published var isLoggedIn = false
     private var request: UserLoginRequest?
     func Login(user: UserLoginModel) -> Void {
         let params = ["email": user.email, "password": user.password] as Dictionary<String, String>
@@ -24,6 +27,10 @@ class LoginViewModel: ObservableObject {
         request.execute { [weak self] user in
                     self?.user = user ?? nil        
                     self?.isLoading = false
+            if (user != nil) {
+                        self?.isLoggedIn = true
+                    }
                 }
+        
     }
 }

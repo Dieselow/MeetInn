@@ -6,13 +6,18 @@
 //
 
 import SwiftUI
+import Combine
+import Foundation
+
 
 struct LoginView: View {
     // MARK: - Propertiers
-        @State private var email = ""
-        @State private var password = ""
+    @State private var email = ""
+    @State private var password = ""
     @ObservedObject var viewModel = LoginViewModel()
-    @State var isSubmit = false
+    @State var isSubmit = false    
+    
+    
         // MARK: - View
         var body: some View {
             VStack() {
@@ -30,6 +35,9 @@ struct LoginView: View {
                     .padding(.bottom, 50)
                 
                 VStack(alignment: .leading, spacing: 15) {
+                    if viewModel.isLoading {
+                        ProgressView().frame(maxWidth: .infinity, alignment: .center)
+                    }
                     TextField("Email", text: self.$email)
                         .padding()
                         .background(Color.white)
@@ -66,7 +74,8 @@ struct LoginView: View {
                         RegisterView()
                     })
                 }
-            }
+            }.fullScreenCover(isPresented: $viewModel.isLoggedIn, content: HomeView.init)
+
             .background(
                 LinearGradient(gradient: Gradient(colors: [.purple, .blue]), startPoint: .top, endPoint: .bottom)
                     .edgesIgnoringSafeArea(.all))
