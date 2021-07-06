@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Roles {
+struct Roles: Encodable {
     let Id: String?
     let role: String?
 }

@@ -16,6 +16,7 @@ struct RegisterView: View {
     @State private var confirmPassword = ""
     @State private var dob = Date()
     @ObservedObject var viewModel = RegisterViewModel()
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
     
@@ -71,20 +72,18 @@ struct RegisterView: View {
             }.padding(.top, 50)
             
             Spacer()
-            HStack(spacing: 0) {
-                Text("Already have an account ? ")
-                Button(action: {}) {
-                    Text("Sign  ")
-                        .foregroundColor(.black)
-                }
-            }
         }.background(
             LinearGradient(gradient: Gradient(colors: [.purple, .blue]), startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all))
     }
     func RegisterUserAction(email: String,password: String,confirmPassword: String, firstname: String, lastname: String, bitrhDate: Date) -> Void {
 
-        viewModel.registerUser(newUser: UserRegisterModel(email: email, firstname: firstname, lastname: lastname, password: password, confirmPassword: confirmPassword, birthDate: bitrhDate))
+        viewModel.registerUser(newUser: UserRegisterModel(email: email, firstname: firstname, lastname: lastname, password: password, confirmPassword: confirmPassword, birthDate: bitrhDate), completion: {
+            result in
+            if result {
+                presentationMode.wrappedValue.dismiss()
+            }
+        })
     }
 }
 

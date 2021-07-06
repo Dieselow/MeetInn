@@ -25,16 +25,21 @@ extension UserLoginRequest: NetworkRequest {
             print(data)
             do {
                 let wrapper = try decoder.decode(JWTTokenModel.self, from: data)
-                let jwt = try JWTDecode.decode(jwt: wrapper.token!)
+                let token = wrapper.token ?? nil
+                if token == nil {
+                    throw LoginError("No user found")
+                }
+                let jwt = try JWTDecode.decode(jwt: token!)
                 let jwtRoles: [Dictionary<String,String>] = jwt.claim(name: "roles").rawValue as! [Dictionary<String,String>]
                 jwtRoles.forEach{ jwtRole in
                     roles.append(Roles(Id: jwtRole["id"], role: jwtRole["role"]))
                 }
                 //
                 
-                return UserModel(Id: jwt.claim(name: "id").string! ,email: jwt.claim(name: "email").string!, createdAt: jwt.issuedAt!, expiresAt: jwt.expiresAt!, roles: roles )
+                return UserModel(Id: jwt.claim(name: "id").string! ,email: jwt.claim(name: "sub").string!, createdAt: jwt.issuedAt!, expiresAt: jwt.expiresAt!, roles: roles )
 
-            } catch  {
+            }
+            catch  {
                 print(error)
             }
             return nil

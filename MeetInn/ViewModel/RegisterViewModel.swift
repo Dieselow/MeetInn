@@ -11,7 +11,7 @@ class RegisterViewModel: ObservableObject {
     @Published private(set) var isLoading = false
     private var request: UserRegistrationRequest?
     
-    func registerUser(newUser: UserRegisterModel){
+    func registerUser(newUser: UserRegisterModel, completion: @escaping (Bool) -> Void){
         guard !isLoading else { return }
                 isLoading = true
         
@@ -22,8 +22,11 @@ class RegisterViewModel: ObservableObject {
         let request = UserRegistrationRequest(request: resource.request)
         self.request = request
         request.execute { [weak self] user in
-                    self?.user = user ?? nil
-                    self?.isLoading = false
+            if user != nil {
+                self?.user = user!
+                completion(true)
+            }
+            self?.isLoading = false
                 }
     }
 }

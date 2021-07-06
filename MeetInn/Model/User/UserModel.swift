@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct UserModel {
+struct UserModel: Encodable {
     let Id : String
     let email: String
     let createdAt: Date

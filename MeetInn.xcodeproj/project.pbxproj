@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F35740B2694845C00ED06F0 /* Exceptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F35740A2694845C00ED06F0 /* Exceptions.swift */; };
+		3F35740E26948A0800ED06F0 /* PartnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F35740D26948A0800ED06F0 /* PartnerModel.swift */; };
+		3F35741026948BB700ED06F0 /* PartnerResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F35740F26948BB700ED06F0 /* PartnerResource.swift */; };
+		3F35741226948BEC00ED06F0 /* PartnerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F35741126948BEC00ED06F0 /* PartnerRequest.swift */; };
+		3F35741626948CC000ED06F0 /* PartnerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F35741526948CC000ED06F0 /* PartnerRowView.swift */; };
+		3F35741826948D3000ED06F0 /* PartnersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F35741726948D3000ED06F0 /* PartnersViewModel.swift */; };
+		3F35741A26949C2800ED06F0 /* PartnerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F35741926949C2800ED06F0 /* PartnerDetail.swift */; };
 		3F6BB112264FDF070098825B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BB111264FDF070098825B /* LoginView.swift */; };
 		3FA4A423266E802A00E8A75E /* UserLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4A422266E802A00E8A75E /* UserLoginModel.swift */; };
 		3FA4A425266E824200E8A75E /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4A424266E824200E8A75E /* RegisterViewModel.swift */; };
@@ -32,6 +39,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F35740A2694845C00ED06F0 /* Exceptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exceptions.swift; sourceTree = "<group>"; };
+		3F35740D26948A0800ED06F0 /* PartnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerModel.swift; sourceTree = "<group>"; };
+		3F35740F26948BB700ED06F0 /* PartnerResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerResource.swift; sourceTree = "<group>"; };
+		3F35741126948BEC00ED06F0 /* PartnerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerRequest.swift; sourceTree = "<group>"; };
+		3F35741526948CC000ED06F0 /* PartnerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerRowView.swift; sourceTree = "<group>"; };
+		3F35741726948D3000ED06F0 /* PartnersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnersViewModel.swift; sourceTree = "<group>"; };
+		3F35741926949C2800ED06F0 /* PartnerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetail.swift; sourceTree = "<group>"; };
 		3F6BB111264FDF070098825B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3FA4A422266E802A00E8A75E /* UserLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginModel.swift; sourceTree = "<group>"; };
 		3FA4A424266E824200E8A75E /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
@@ -69,12 +83,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F35740C269489E800ED06F0 /* Partners */ = {
+			isa = PBXGroup;
+			children = (
+				3F35740D26948A0800ED06F0 /* PartnerModel.swift */,
+				3F35740F26948BB700ED06F0 /* PartnerResource.swift */,
+				3F35741126948BEC00ED06F0 /* PartnerRequest.swift */,
+			);
+			path = Partners;
+			sourceTree = "<group>";
+		};
 		3F6BB110264FDEFB0098825B /* View */ = {
 			isa = PBXGroup;
 			children = (
 				3F6BB111264FDF070098825B /* LoginView.swift */,
 				3FD37025266E490800B60B10 /* RegisterView.swift */,
 				3FFAEC682673C9F40020DF0A /* HomeView.swift */,
+				3F35741526948CC000ED06F0 /* PartnerRowView.swift */,
+				3F35741926949C2800ED06F0 /* PartnerDetail.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -96,6 +122,7 @@
 				3FC73370267378F600C8643A /* NetworkRequest.swift */,
 				3FC733722673792100C8643A /* ApiRequest.swift */,
 				3FFAEC622673BE1D0020DF0A /* JWTTokenModel.swift */,
+				3F35740A2694845C00ED06F0 /* Exceptions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -103,6 +130,7 @@
 		3FD37027266E4E0200B60B10 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3F35740C269489E800ED06F0 /* Partners */,
 				3FA4A421266E801A00E8A75E /* User */,
 			);
 			path = Model;
@@ -113,6 +141,7 @@
 			children = (
 				3FD37029266E4E5F00B60B10 /* LoginViewModel.swift */,
 				3FA4A424266E824200E8A75E /* RegisterViewModel.swift */,
+				3F35741726948D3000ED06F0 /* PartnersViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -253,21 +282,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F35741826948D3000ED06F0 /* PartnersViewModel.swift in Sources */,
+				3F35741026948BB700ED06F0 /* PartnerResource.swift in Sources */,
 				3FC733732673792100C8643A /* ApiRequest.swift in Sources */,
+				3F35740B2694845C00ED06F0 /* Exceptions.swift in Sources */,
 				3F6BB112264FDF070098825B /* LoginView.swift in Sources */,
 				3FFAEC612673BCCB0020DF0A /* UserLoginRequest.swift in Sources */,
 				3FC7336F2673786100C8643A /* ApiResource.swift in Sources */,
+				3F35741626948CC000ED06F0 /* PartnerRowView.swift in Sources */,
 				3FD37026266E490800B60B10 /* RegisterView.swift in Sources */,
 				3FA4A425266E824200E8A75E /* RegisterViewModel.swift in Sources */,
 				3FD5B426264E6A15008A560E /* ContentView.swift in Sources */,
+				3F35741A26949C2800ED06F0 /* PartnerDetail.swift in Sources */,
 				3FFAEC5326738EDE0020DF0A /* UserRegistrationResource.swift in Sources */,
 				3FFAEC632673BE1D0020DF0A /* JWTTokenModel.swift in Sources */,
+				3F35741226948BEC00ED06F0 /* PartnerRequest.swift in Sources */,
 				3FFAEC592673B3DA0020DF0A /* UserRegistrationRequest.swift in Sources */,
 				3FD3702A266E4E5F00B60B10 /* LoginViewModel.swift in Sources */,
 				3FA4A423266E802A00E8A75E /* UserLoginModel.swift in Sources */,
 				3FFAEC5F2673BC8A0020DF0A /* UserLoginResource.swift in Sources */,
 				3FC7336B2673778600C8643A /* UserRegisteredModel.swift in Sources */,
 				3FD5B424264E6A15008A560E /* MeetInnApp.swift in Sources */,
+				3F35740E26948A0800ED06F0 /* PartnerModel.swift in Sources */,
 				3FC73371267378F600C8643A /* NetworkRequest.swift in Sources */,
 				3FFAEC652673C0710020DF0A /* UserModel.swift in Sources */,
 				3FA4A427266E826300E8A75E /* UserRegisterModel.swift in Sources */,
