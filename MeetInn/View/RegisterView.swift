@@ -19,7 +19,7 @@ struct RegisterView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-    
+        
         VStack() {
             Text("MeetInn Register")
                 .font(.largeTitle).foregroundColor(Color.white)

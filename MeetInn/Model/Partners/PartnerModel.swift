@@ -12,7 +12,7 @@ struct PartnerModel: Hashable, Codable,Identifiable {
     var phoneNumber: String
     var address: AddressModel?
     var createDate: String
-    var timeslots: Array<Timeslot>?
+    var timeSlots: Array<Timeslot>?
     var photoUrl: String?
 }
 
@@ -31,7 +31,7 @@ struct AddressModel: Hashable,Encodable {
     var county: String
     var locality: String
     var administrativeArea: String
-    var neighborhood: String
+    var neighborhood: String?
     var country: String
     var countryCode: String
     var continent: String
