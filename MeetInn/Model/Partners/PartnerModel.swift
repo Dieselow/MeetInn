@@ -12,8 +12,10 @@ struct PartnerModel: Hashable, Codable,Identifiable {
     var phoneNumber: String
     var address: AddressModel?
     var createDate: String
-    var timeSlots: Array<String>
+    var timeslots: Array<Timeslot>?
+    var photoUrl: String?
 }
+
 
 struct AddressModel: Hashable,Encodable {
     var latitude: Double
@@ -57,4 +59,11 @@ extension AddressModel: Decodable {
         case continent = "continent"
         case label = "label"
     }
+}
+
+struct Timeslot: Hashable,Identifiable, Codable {
+    var id: String
+    var startDate: Int
+    var endDate: Int
+    var seats: Int8
 }

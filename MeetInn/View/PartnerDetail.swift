@@ -10,6 +10,7 @@ import MapKit
 
 struct PartnerDetail: View {
     var partner: PartnerModel
+    @State private var image: UIImage? = nil
     @State var isGuest = false
     @State var shouldRedirectToLogin = false
     var body: some View {
@@ -17,6 +18,15 @@ struct PartnerDetail: View {
             MapView(coordinate: CLLocationCoordinate2D(latitude: partner.address?.latitude ?? 34.011_286, longitude: partner.address?.longitude ?? -116.166_868))
                 .ignoresSafeArea(edges: .top)
                 .frame(height: 300)
+            if image != nil {
+                CircleImage(image: image!)
+                    .offset(y: -130)
+                    .padding(.bottom, -130)
+            }
+            else {
+                ProgressView().frame(maxWidth: .infinity, alignment: .center)
+            }
+            
             VStack(alignment: .leading) {
                 Text(partner.name)
                     .font(.title)
@@ -58,19 +68,37 @@ struct PartnerDetail: View {
             .padding()
 
             Spacer()
+        }.onAppear{
+            setImage(from: partner.photoUrl)
+        }
+    }
+    
+    func setImage(from url: String?) {
+        guard let imageURL = URL(string: url ?? "https://shorturl.at/psuP8") else { return }
+
+            // just not to cause a deadlock in UI!
+        DispatchQueue.global().async {
+            guard let imageData = try? Data(contentsOf: imageURL) else { return }
+
+            let image = UIImage(data: imageData)
+            DispatchQueue.main.async {
+                if image != nil {
+                    self.image = image!
+                }
+            }
         }
     }
 }
 
 
 struct CircleImage: View {
-    var image: Image
-
+    var image: UIImage
+    
     var body: some View {
-        image
+        Image(uiImage: image)
+            .resizable()
             .clipShape(Circle())
             .overlay(Circle().stroke(Color.white, lineWidth: 4))
-            .shadow(radius: 7)
     }
 }
 
