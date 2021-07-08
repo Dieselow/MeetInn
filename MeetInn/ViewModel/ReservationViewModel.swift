@@ -27,7 +27,7 @@ class ReservationViewModel: ObservableObject {
             isLoading = true
             let resource = ReservationResource(body: params, id: timeSlotId, token: user.token)
             let request = ReservationRequest(request: resource.request)
-            request.execute { [weak self] result in
+            request.execute { [weak self] result,response,error in
                 self?.isLoading = false
                 if (result != nil) {
                     completion(true,"oui ça marche")

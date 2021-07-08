@@ -25,7 +25,7 @@ class LoginViewModel: ObservableObject {
         let resource = UserLoginResource(body: params)
         let request = UserLoginRequest(request: resource.request)
         self.request = request
-        request.execute { [weak self] user in
+        request.execute { [weak self] user,response,error in
             self?.user = user ?? nil
             self?.isLoading = false
             if (user != nil) {

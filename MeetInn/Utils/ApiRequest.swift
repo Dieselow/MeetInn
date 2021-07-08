@@ -17,7 +17,7 @@ class APIRequest<Resource: APIResource> {
         self.resource = resource
     }
 }
- 
+
 extension APIRequest: NetworkRequest {
     func decode(_ data: Data) -> [Resource.ModelType]? {
         let decoder = JSONDecoder()
@@ -25,14 +25,14 @@ extension APIRequest: NetworkRequest {
         do {
             let wrapper = try decoder.decode(Wrapper<Resource.ModelType>.self, from: data)
             return wrapper.items
-
+            
         } catch  {
             print(error)
             return nil
         }
     }
     
-    func execute(withCompletion completion: @escaping ([Resource.ModelType]?) -> Void) {
+    func execute(withCompletion completion: @escaping ([Resource.ModelType]?,HTTPURLResponse?,Error?) -> Void) {
         load(resource.request, withCompletion: completion)
     }
 }

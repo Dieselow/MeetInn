@@ -15,15 +15,15 @@ class ReservationRequest{
     }
 }
 
-extension ReservationRequest : NetworkRequest {
-    typealias ModelType = [PartnerModel]
+extension ReservationRequest : NetworkRequest {    
+    typealias ModelType = Timeslot
     
     func decode(_ data: Data) -> ModelType? {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .secondsSince1970
             print(data)
             do {
-                return try decoder.decode([PartnerModel].self, from: data)
+                return try decoder.decode(Timeslot.self, from: data)
             }
             catch  {
                 print(error)
@@ -31,7 +31,7 @@ extension ReservationRequest : NetworkRequest {
             return nil
         }
     
-    func execute(withCompletion completion: @escaping (ModelType?) -> Void) {
+    func execute(withCompletion completion: @escaping (ModelType?,HTTPURLResponse?,Error?) -> Void) {
         load(request, withCompletion: completion)
     }
     

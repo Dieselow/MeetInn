@@ -17,8 +17,9 @@ class PartnersViewModel: ObservableObject {
         let resource = PartnerResource()
         let request = PartnerRequest(request: resource.request)
         self.request = request
-        request.execute { [weak self] data in                    
+        request.execute { [weak self] data,response,error in
             self?.isLoading = false
+            
             if data != nil {
                 self?.partners = data!
             }

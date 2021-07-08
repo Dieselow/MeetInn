@@ -21,7 +21,7 @@ class RegisterViewModel: ObservableObject {
         let resource = UserRegistrationResource(body: params)
         let request = UserRegistrationRequest(request: resource.request)
         self.request = request
-        request.execute { [weak self] user in
+        request.execute { [weak self] user,response,error in
             if user != nil {
                 self?.user = user!
                 completion(true)
