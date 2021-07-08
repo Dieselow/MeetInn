@@ -7,6 +7,8 @@
 
 import Foundation
 struct PartnerResource: APIResource {
+    var token: String?
+    
     var body: Dictionary<String, String>?
     
     typealias ModelType = Array<PartnerModel>

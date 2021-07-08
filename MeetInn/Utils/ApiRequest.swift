@@ -22,7 +22,6 @@ extension APIRequest: NetworkRequest {
     func decode(_ data: Data) -> [Resource.ModelType]? {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .secondsSince1970
-        print(data)
         do {
             let wrapper = try decoder.decode(Wrapper<Resource.ModelType>.self, from: data)
             return wrapper.items

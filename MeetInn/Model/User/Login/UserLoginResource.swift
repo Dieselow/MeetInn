@@ -8,6 +8,8 @@
 import Foundation
 
 struct UserLoginResource: APIResource {
+    var token: String?
+    
     typealias ModelType = UserModel
     
     var httpMethod: String {

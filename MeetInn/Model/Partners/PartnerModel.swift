@@ -66,4 +66,5 @@ struct Timeslot: Hashable,Identifiable, Codable {
     var startDate: Int
     var endDate: Int
     var seats: Int8
+    var reservation: ReservationModel?
 }

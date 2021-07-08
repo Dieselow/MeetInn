@@ -36,7 +36,7 @@ extension UserLoginRequest: NetworkRequest {
                 }
                 //
                 
-                return UserModel(Id: jwt.claim(name: "id").string! ,email: jwt.claim(name: "sub").string!, createdAt: jwt.issuedAt!, expiresAt: jwt.expiresAt!, roles: roles )
+                return UserModel(Id: jwt.claim(name: "id").string! ,email: jwt.claim(name: "sub").string!, createdAt: jwt.issuedAt!, expiresAt: jwt.expiresAt!, roles: roles, token: token! )
 
             }
             catch  {

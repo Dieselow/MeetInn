@@ -8,6 +8,8 @@
 import Foundation
 
 struct UserRegistrationResource: APIResource {
+    var token: String?
+    
     var httpMethod: String {
         return "POST"
     }

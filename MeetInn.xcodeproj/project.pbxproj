@@ -16,6 +16,9 @@
 		3F35741626948CC000ED06F0 /* PartnerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F35741526948CC000ED06F0 /* PartnerRowView.swift */; };
 		3F35741826948D3000ED06F0 /* PartnersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F35741726948D3000ED06F0 /* PartnersViewModel.swift */; };
 		3F35741A26949C2800ED06F0 /* PartnerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F35741926949C2800ED06F0 /* PartnerDetail.swift */; };
+		3F6B27C22696CE4C00DE0627 /* ReservationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B27C12696CE4C00DE0627 /* ReservationModel.swift */; };
+		3F6B27C42696CEAE00DE0627 /* ReservationResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B27C32696CEAE00DE0627 /* ReservationResource.swift */; };
+		3F6B27C62696D04700DE0627 /* ReservationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B27C52696D04700DE0627 /* ReservationRequest.swift */; };
 		3F6BB112264FDF070098825B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BB111264FDF070098825B /* LoginView.swift */; };
 		3FA4A423266E802A00E8A75E /* UserLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4A422266E802A00E8A75E /* UserLoginModel.swift */; };
 		3FA4A425266E824200E8A75E /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4A424266E824200E8A75E /* RegisterViewModel.swift */; };
@@ -50,6 +53,9 @@
 		3F35741526948CC000ED06F0 /* PartnerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerRowView.swift; sourceTree = "<group>"; };
 		3F35741726948D3000ED06F0 /* PartnersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnersViewModel.swift; sourceTree = "<group>"; };
 		3F35741926949C2800ED06F0 /* PartnerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetail.swift; sourceTree = "<group>"; };
+		3F6B27C12696CE4C00DE0627 /* ReservationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationModel.swift; sourceTree = "<group>"; };
+		3F6B27C32696CEAE00DE0627 /* ReservationResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationResource.swift; sourceTree = "<group>"; };
+		3F6B27C52696D04700DE0627 /* ReservationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationRequest.swift; sourceTree = "<group>"; };
 		3F6BB111264FDF070098825B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3FA4A422266E802A00E8A75E /* UserLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginModel.swift; sourceTree = "<group>"; };
 		3FA4A424266E824200E8A75E /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
@@ -97,6 +103,16 @@
 			path = Partners;
 			sourceTree = "<group>";
 		};
+		3F6B27C02696CE2200DE0627 /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+				3F6B27C12696CE4C00DE0627 /* ReservationModel.swift */,
+				3F6B27C32696CEAE00DE0627 /* ReservationResource.swift */,
+				3F6B27C52696D04700DE0627 /* ReservationRequest.swift */,
+			);
+			path = Reservation;
+			sourceTree = "<group>";
+		};
 		3F6BB110264FDEFB0098825B /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +151,7 @@
 		3FD37027266E4E0200B60B10 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3F6B27C02696CE2200DE0627 /* Reservation */,
 				3F35740C269489E800ED06F0 /* Partners */,
 				3FA4A421266E801A00E8A75E /* User */,
 			);
@@ -294,6 +311,7 @@
 				3F35740B2694845C00ED06F0 /* Exceptions.swift in Sources */,
 				3F6BB112264FDF070098825B /* LoginView.swift in Sources */,
 				3FFAEC612673BCCB0020DF0A /* UserLoginRequest.swift in Sources */,
+				3F6B27C62696D04700DE0627 /* ReservationRequest.swift in Sources */,
 				3FC7336F2673786100C8643A /* ApiResource.swift in Sources */,
 				3F35741626948CC000ED06F0 /* PartnerRowView.swift in Sources */,
 				3FD37026266E490800B60B10 /* RegisterView.swift in Sources */,
@@ -303,6 +321,7 @@
 				3F35741A26949C2800ED06F0 /* PartnerDetail.swift in Sources */,
 				3FFAEC5326738EDE0020DF0A /* UserRegistrationResource.swift in Sources */,
 				3FFAEC632673BE1D0020DF0A /* JWTTokenModel.swift in Sources */,
+				3F6B27C22696CE4C00DE0627 /* ReservationModel.swift in Sources */,
 				3F35741226948BEC00ED06F0 /* PartnerRequest.swift in Sources */,
 				3FFAEC592673B3DA0020DF0A /* UserRegistrationRequest.swift in Sources */,
 				3FD3702A266E4E5F00B60B10 /* LoginViewModel.swift in Sources */,
@@ -313,6 +332,7 @@
 				3FD5B424264E6A15008A560E /* MeetInnApp.swift in Sources */,
 				3F35740E26948A0800ED06F0 /* PartnerModel.swift in Sources */,
 				3FC73371267378F600C8643A /* NetworkRequest.swift in Sources */,
+				3F6B27C42696CEAE00DE0627 /* ReservationResource.swift in Sources */,
 				3FFAEC652673C0710020DF0A /* UserModel.swift in Sources */,
 				3FA4A427266E826300E8A75E /* UserRegisterModel.swift in Sources */,
 				3FFAEC692673C9F40020DF0A /* HomeView.swift in Sources */,

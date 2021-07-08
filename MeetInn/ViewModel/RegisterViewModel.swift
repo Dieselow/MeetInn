@@ -13,9 +13,9 @@ class RegisterViewModel: ObservableObject {
     
     func registerUser(newUser: UserRegisterModel, completion: @escaping (Bool) -> Void){
         guard !isLoading else { return }
-                isLoading = true
+        isLoading = true
         
-    
+        
         let params = ["email": newUser.email, "password": newUser.password, "firstname": newUser.firstname,
                       "lastname": newUser.lastname] as Dictionary<String, String>
         let resource = UserRegistrationResource(body: params)
@@ -26,7 +26,10 @@ class RegisterViewModel: ObservableObject {
                 self?.user = user!
                 completion(true)
             }
+            else {
+                completion(false)
+            }
             self?.isLoading = false
-                }
+        }
     }
 }

@@ -12,6 +12,7 @@ protocol APIResource {
     var filter: String? { get }
     var httpMethod: String {get}
     var body: Dictionary<String,String>? {get set}
+    var token: String? {get set}
 }
  
 extension APIResource {
@@ -29,6 +30,9 @@ extension APIResource {
     var request: URLRequest {
         var request =  URLRequest(url: url)
         request.httpMethod = httpMethod
+        if token != nil {
+            request.addValue(token!, forHTTPHeaderField: "BearerToken")
+        }
         switch httpMethod {
         case "POST":
             request.httpBody = try? JSONSerialization.data(withJSONObject: body!, options: [])

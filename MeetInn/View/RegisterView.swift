@@ -16,6 +16,7 @@ struct RegisterView: View {
     @State private var confirmPassword = ""
     @State private var dob = Date()
     @ObservedObject var viewModel = RegisterViewModel()
+    @ObservedObject var loginViewModel = LoginViewModel()
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -81,7 +82,11 @@ struct RegisterView: View {
         viewModel.registerUser(newUser: UserRegisterModel(email: email, firstname: firstname, lastname: lastname, password: password, confirmPassword: confirmPassword, birthDate: bitrhDate), completion: {
             result in
             if result {
-                presentationMode.wrappedValue.dismiss()
+                loginViewModel.Login(user: UserLoginModel(email: email, password: password)) { isLoggedIn in
+                    if isLoggedIn {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                }
             }
         })
     }
