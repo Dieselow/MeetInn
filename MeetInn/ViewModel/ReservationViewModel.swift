@@ -38,6 +38,23 @@ class ReservationViewModel: ObservableObject {
         return dateFormatter.string(from: date)
     }
     
+    func getTimeStampsDays(timestamps: Array<Timeslot>) {
+        var slots  = [[String]]()
+        for index in (0...timestamps.count - 1){
+            let timestamp = timestamps[index]
+            let date = Date(timeIntervalSince1970: Double(timestamp.startDate))
+            let dateFormatter = DateFormatter()
+            dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
+            dateFormatter.locale = NSLocale.current
+            let components = Calendar.current.dateComponents([.day, .month], from: date)
+            let day = components.day
+            let month = components.month
+            print(day,month)
+        }
+        
+        
+    }
+    
     func createReservation(timeSlotId: String, partnerId: String, completion: @escaping (Bool,String?) -> Void) {
         if let user  = try? JSONDecoder().decode(UserModel.self, from: defaults.object(forKey: "currentUser") as! Data) {
             let params = ["owner": user.Id] as Dictionary<String, String>

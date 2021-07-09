@@ -108,6 +108,7 @@ struct ReservationView: View {
     
     func fetchTimeslots(){
         viewModel.getTimeSlots(partnerId: self.partner.id)
+        viewModel.getTimeStampsDays(timestamps: viewModel.timeslots)
     }
 }
 
