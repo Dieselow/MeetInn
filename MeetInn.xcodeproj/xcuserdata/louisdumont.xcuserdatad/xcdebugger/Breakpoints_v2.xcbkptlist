@@ -286,8 +286,8 @@
             filePath = "MeetInn/Model/Partners/PartnerRequest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "decode(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -588,8 +588,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
             endingLineNumber = "24"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "load(_:withCompletion:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "83DB24DC-1F26-4FEF-8F78-A325D6BBA1E5 - 778534ee65a26d3e"
@@ -634,10 +634,8 @@
             filePath = "MeetInn/ViewModel/ReservationViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "createReservation(timeSlotId:partnerId:completion:)"
-            landmarkType = "7">
+            startingLineNumber = "103"
+            endingLineNumber = "103">
             <Locations>
                <Location
                   uuid = "5FF4722A-F25B-452E-BAB1-6C21FB8B162A - 4cd7e0325fb73cdf"
@@ -676,32 +674,28 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7437D053-CE16-4AF1-AF0F-6C1C04BE6E87"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeetInn/ViewModel/ReservationViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "createReservation(timeSlotId:partnerId:completion:)"
-            landmarkType = "7">
+            startingLineNumber = "104"
+            endingLineNumber = "104">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "35C5705F-4A20-4540-8660-6B97408B56AE"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeetInn/ViewModel/ReservationViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "createReservation(timeSlotId:partnerId:completion:)"
-            landmarkType = "7">
+            startingLineNumber = "105"
+            endingLineNumber = "105">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -714,10 +708,8 @@
             filePath = "MeetInn/ViewModel/ReservationViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "createReservation(timeSlotId:partnerId:completion:)"
-            landmarkType = "7">
+            startingLineNumber = "102"
+            endingLineNumber = "102">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -730,10 +722,8 @@
             filePath = "MeetInn/ViewModel/ReservationViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "createReservation(timeSlotId:partnerId:completion:)"
-            landmarkType = "7">
+            startingLineNumber = "98"
+            endingLineNumber = "98">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -762,10 +752,8 @@
             filePath = "MeetInn/ViewModel/ReservationViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "createReservation(timeSlotId:partnerId:completion:)"
-            landmarkType = "7">
+            startingLineNumber = "101"
+            endingLineNumber = "101">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -780,8 +768,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
             endingLineNumber = "19"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "load(_:withCompletion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -794,9 +782,9 @@
             filePath = "MeetInn/View/ReservationView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "makeReservation()"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "fetchTimeslots()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -810,9 +798,9 @@
             filePath = "MeetInn/View/ReservationView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "makeReservation()"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "fetchTimeslots()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -826,9 +814,9 @@
             filePath = "MeetInn/View/ReservationView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "makeReservation()"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "fetchTimeslots()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -842,73 +830,9 @@
             filePath = "MeetInn/View/ReservationView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "makeReservation()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "845B1020-C713-4F56-9A57-519453F80C7C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MeetInn/ViewModel/ReservationViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "getTimeSlots(partnerId:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "845B1020-C713-4F56-9A57-519453F80C7C - b43817e6e32d1b45"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MeetInn.ReservationViewModel.getTimeSlots(partnerId: Swift.String) -&gt; ()"
-                  moduleName = "MeetInn"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/louisdumont/XcodeProjects/MeetInn/MeetInn/ViewModel/ReservationViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "468">
-               </Location>
-               <Location
-                  uuid = "845B1020-C713-4F56-9A57-519453F80C7C - 14c78bd2ceba86"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;MeetInn.Timeslot&gt;&gt;, Swift.Optional&lt;__C.NSHTTPURLResponse&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in MeetInn.ReservationViewModel.getTimeSlots(partnerId: Swift.String) -&gt; ()"
-                  moduleName = "MeetInn"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/louisdumont/XcodeProjects/MeetInn/MeetInn/ViewModel/ReservationViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "222">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3A66C307-449A-4A33-857C-3D256570BF2C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MeetInn/ViewModel/ReservationViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "getTimeSlots(partnerId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -942,6 +866,20 @@
             endingLineNumber = "22"
             landmarkName = "decode(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "404BC66A-3EF7-49DA-95DB-B9708884718A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeetInn/ViewModel/ReservationViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
