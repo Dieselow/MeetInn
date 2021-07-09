@@ -11,6 +11,24 @@ class ReservationViewModel: ObservableObject {
     @Published var isLoggedIn = false
     let defaults = UserDefaults.standard
     private var request: ReservationRequest?
+    @Published var timeslots: Array<Timeslot> = []
+
+    
+    func getTimeSlots(partnerId: String) -> Void {
+        guard !isLoading else { return }
+        isLoading = true
+        let resource = TimeslotResource(id: partnerId)
+        let request = TimeslotRequest(request: resource.request)
+        request.execute { [weak self] data,response,error in
+            self?.isLoading = false
+            
+            if data != nil {
+                self?.timeslots = data!
+            }
+                
+        }
+        
+    }
     func convertDate(timestamp: Int) -> String {
         let date = Date(timeIntervalSince1970: Double(timestamp))
         let dateFormatter = DateFormatter()

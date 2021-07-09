@@ -33,6 +33,9 @@
 		3FD5B426264E6A15008A560E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD5B425264E6A15008A560E /* ContentView.swift */; };
 		3FD5B428264E6A16008A560E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FD5B427264E6A16008A560E /* Assets.xcassets */; };
 		3FD5B42B264E6A16008A560E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FD5B42A264E6A16008A560E /* Preview Assets.xcassets */; };
+		3FE4404B26985A27002C32D7 /* SwiftUIRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 3FE4404A26985A27002C32D7 /* SwiftUIRefresh */; };
+		3FE4404E26985EED002C32D7 /* TimeslotResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4404D26985EED002C32D7 /* TimeslotResource.swift */; };
+		3FE4405026985F37002C32D7 /* TimeslotRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4404F26985F37002C32D7 /* TimeslotRequest.swift */; };
 		3FFAEC5326738EDE0020DF0A /* UserRegistrationResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFAEC5226738EDE0020DF0A /* UserRegistrationResource.swift */; };
 		3FFAEC592673B3DA0020DF0A /* UserRegistrationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFAEC582673B3DA0020DF0A /* UserRegistrationRequest.swift */; };
 		3FFAEC5D2673BC7C0020DF0A /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = 3FFAEC5C2673BC7C0020DF0A /* JWTDecode */; };
@@ -72,6 +75,8 @@
 		3FD5B427264E6A16008A560E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FD5B42A264E6A16008A560E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3FD5B42C264E6A16008A560E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FE4404D26985EED002C32D7 /* TimeslotResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeslotResource.swift; sourceTree = "<group>"; };
+		3FE4404F26985F37002C32D7 /* TimeslotRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeslotRequest.swift; sourceTree = "<group>"; };
 		3FFAEC5226738EDE0020DF0A /* UserRegistrationResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationResource.swift; sourceTree = "<group>"; };
 		3FFAEC582673B3DA0020DF0A /* UserRegistrationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationRequest.swift; sourceTree = "<group>"; };
 		3FFAEC5E2673BC8A0020DF0A /* UserLoginResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginResource.swift; sourceTree = "<group>"; };
@@ -86,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FE4404B26985A27002C32D7 /* SwiftUIRefresh in Frameworks */,
 				3FFAEC5D2673BC7C0020DF0A /* JWTDecode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +157,7 @@
 		3FD37027266E4E0200B60B10 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3FE4404C26985EDD002C32D7 /* TimeSlots */,
 				3F6B27C02696CE2200DE0627 /* Reservation */,
 				3F35740C269489E800ED06F0 /* Partners */,
 				3FA4A421266E801A00E8A75E /* User */,
@@ -209,6 +216,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		3FE4404C26985EDD002C32D7 /* TimeSlots */ = {
+			isa = PBXGroup;
+			children = (
+				3FE4404D26985EED002C32D7 /* TimeslotResource.swift */,
+				3FE4404F26985F37002C32D7 /* TimeslotRequest.swift */,
+			);
+			path = TimeSlots;
+			sourceTree = "<group>";
+		};
 		3FFAEC5126738EC10020DF0A /* Registration */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +264,7 @@
 			name = MeetInn;
 			packageProductDependencies = (
 				3FFAEC5C2673BC7C0020DF0A /* JWTDecode */,
+				3FE4404A26985A27002C32D7 /* SwiftUIRefresh */,
 			);
 			productName = MeetInn;
 			productReference = 3FD5B420264E6A15008A560E /* MeetInn.app */;
@@ -278,6 +295,7 @@
 			mainGroup = 3FD5B417264E6A15008A560E;
 			packageReferences = (
 				3FFAEC5B2673BC7C0020DF0A /* XCRemoteSwiftPackageReference "JWTDecode.swift" */,
+				3FE4404926985A27002C32D7 /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */,
 			);
 			productRefGroup = 3FD5B421264E6A15008A560E /* Products */;
 			projectDirPath = "";
@@ -305,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FE4405026985F37002C32D7 /* TimeslotRequest.swift in Sources */,
 				3F35741826948D3000ED06F0 /* PartnersViewModel.swift in Sources */,
 				3F35741026948BB700ED06F0 /* PartnerResource.swift in Sources */,
 				3FC733732673792100C8643A /* ApiRequest.swift in Sources */,
@@ -315,6 +334,7 @@
 				3FC7336F2673786100C8643A /* ApiResource.swift in Sources */,
 				3F35741626948CC000ED06F0 /* PartnerRowView.swift in Sources */,
 				3FD37026266E490800B60B10 /* RegisterView.swift in Sources */,
+				3FE4404E26985EED002C32D7 /* TimeslotResource.swift in Sources */,
 				3FA4A425266E824200E8A75E /* RegisterViewModel.swift in Sources */,
 				3FD5B426264E6A15008A560E /* ContentView.swift in Sources */,
 				3F0E64C42695BCA7001DF87B /* ReservationViewModel.swift in Sources */,
@@ -526,6 +546,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3FE4404926985A27002C32D7 /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/timbersoftware/SwiftUIRefresh.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
 		3FFAEC5B2673BC7C0020DF0A /* XCRemoteSwiftPackageReference "JWTDecode.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/auth0/JWTDecode.swift.git";
@@ -537,6 +565,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3FE4404A26985A27002C32D7 /* SwiftUIRefresh */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3FE4404926985A27002C32D7 /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */;
+			productName = SwiftUIRefresh;
+		};
 		3FFAEC5C2673BC7C0020DF0A /* JWTDecode */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3FFAEC5B2673BC7C0020DF0A /* XCRemoteSwiftPackageReference "JWTDecode.swift" */;

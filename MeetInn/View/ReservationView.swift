@@ -18,8 +18,8 @@ struct ReservationView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        if partner.timeSlots?.count ?? 0 > 0 {
-            ZStack {
+        ZStack {
+            if viewModel.timeslots.count > 0 {
                 VStack(spacing: 10) {
                     HStack{
                         Text("Select your time slot").font(.largeTitle).foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
@@ -28,8 +28,8 @@ struct ReservationView: View {
                     ScrollView {
                         LazyVGrid(columns: threeColumnGrid, spacing: 20) {
                             // Display the item
-                            ForEach((0...partner.timeSlots!.count - 1), id: \.self) {
-                                let timeslot = partner.timeSlots![$0 % partner.timeSlots!.count]
+                            ForEach((0...viewModel.timeslots.count - 1), id: \.self) {
+                                let timeslot = viewModel.timeslots[$0 % viewModel.timeslots.count]
                                 let startDate = viewModel.convertDate(timestamp: timeslot.startDate)
                                 let endDate = viewModel.convertDate(timestamp: timeslot.endDate)
                                 let isSelected = timeslot.id == $selectedTimeSlot.wrappedValue
@@ -81,14 +81,14 @@ struct ReservationView: View {
                     }
                     Spacer()
                 }.padding()
-                if viewModel.isLoading {
-                    ProgressView().frame(maxWidth: .infinity, alignment: .center)
-                }
             }
-        }
-        else {
-            Text("No TimeSlots available")
-        }
+            else {
+                Text("No TimeSlots available")
+            }
+            if viewModel.isLoading {
+                ProgressView().frame(maxWidth: .infinity, alignment: .center)
+            }
+        }.onAppear(perform: fetchTimeslots)
         
     }
     func makeReservation() -> Void {
@@ -104,6 +104,10 @@ struct ReservationView: View {
             }
             
         }
+    }
+    
+    func fetchTimeslots(){
+        viewModel.getTimeSlots(partnerId: self.partner.id)
     }
 }
 

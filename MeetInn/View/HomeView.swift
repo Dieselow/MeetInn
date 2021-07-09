@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var viewModel = PartnersViewModel()
-
+    @State var needRefresh: Bool = false
     var body: some View {
         NavigationView {
             ZStack {
@@ -23,7 +23,9 @@ struct HomeView: View {
                 }
             }.navigationTitle("Partners")
         }.onAppear(perform: fetchPartners)
+    
     }
+    
     private func fetchPartners() -> Void {
         viewModel.getPartners()
     }
