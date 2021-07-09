@@ -45,7 +45,7 @@ extension UserLoginRequest: NetworkRequest {
             return nil
         }
     
-    func execute(withCompletion completion: @escaping (ModelType?,HTTPURLResponse?,Error?) -> Void) {
+    func execute(withCompletion completion: @escaping (ModelType?,HTTPURLResponse?,String?) -> Void) {
         load(request, withCompletion: completion)
     }
 }

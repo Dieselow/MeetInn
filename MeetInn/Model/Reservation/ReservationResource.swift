@@ -19,7 +19,7 @@ struct ReservationResource: APIResource {
     var token: String?
     
     var methodPath: String {
-        return "/timeslots/\(String(describing: self.id))/reservation"
+        return "/timeslots/" + self.id! + "/reservation"
     }
     
     var filter: String? {

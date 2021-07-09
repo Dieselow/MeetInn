@@ -27,7 +27,7 @@ struct PartnerDetail: View {
             else {
                 ProgressView().frame(maxWidth: .infinity, alignment: .center)
             }
-            
+            Spacer()
             VStack(alignment: .leading) {
                 Text(partner.name)
                     .font(.title)
@@ -47,11 +47,10 @@ struct PartnerDetail: View {
                     .font(.title2)
                 Text(partner.phoneNumber)
             }
-            .padding(.top,-250)
-
+            .padding(.top,-220)
             VStack{
                 HStack{
-                    Button("Reserve",action: {
+                    Button(action: {
                         let user = UserDefaults.standard.object(forKey: "currentUser")
                         if user == nil {
                             isGuest = true;
@@ -59,7 +58,15 @@ struct PartnerDetail: View {
                         else {
                             isConnected = true
                         }
-                    }).background(Color.blue).padding().cornerRadius(8).foregroundColor(.white).font(.largeTitle)
+                    }){
+                        HStack {
+                            Image(systemName: "bookmark")
+                                .font(.title)
+                            Text("Reserve")
+                                .fontWeight(.semibold)
+                                .font(.body)
+                        }
+                    }.padding().foregroundColor(.white).background(Color.blue).cornerRadius(40)
                     .alert(isPresented: $isGuest){
                         Alert(
                             title: Text("Attention"),

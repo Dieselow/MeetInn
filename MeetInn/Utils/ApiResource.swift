@@ -17,7 +17,7 @@ protocol APIResource {
  
 extension APIResource {
     var url: URL {
-        var components = URLComponents(string: "http://localhost:3001/api/v1")!
+        var components = URLComponents(string: "http://20.79.84.247/api/v1")!
         components.path += methodPath
         components.queryItems = []
         if let filter = filter {
@@ -31,7 +31,7 @@ extension APIResource {
         var request =  URLRequest(url: url)
         request.httpMethod = httpMethod
         if token != nil {
-            request.addValue(token!, forHTTPHeaderField: "BearerToken")
+            request.setValue( "Bearer \(token!)", forHTTPHeaderField: "Authorization")
         }
         switch httpMethod {
         case "POST":

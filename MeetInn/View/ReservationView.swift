@@ -8,57 +8,98 @@
 import SwiftUI
 
 struct ReservationView: View {
+    @ObservedObject var viewModel = ReservationViewModel()
     var partner: PartnerModel
-    var fourColumnGrid = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    var threeColumnGrid = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     @State var selectedTimeSlot: String? = nil
-    var viewModel = ReservationViewModel()
+    @State var isReservationDone = false
+    @State var timeSlotNotSelected = false
+    @State var hasErrors = false
     
     var body: some View {
         if partner.timeSlots?.count ?? 0 > 0 {
-            VStack(spacing: 10) {
-                HStack{
-                    Text("Select your time slot").font(.largeTitle).foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                }.padding(.bottom,30)
-                Spacer()
-                ScrollView {
-                    LazyVGrid(columns: fourColumnGrid, spacing: 20) {
-                        // Display the item
-                        ForEach((0...partner.timeSlots!.count - 1), id: \.self) {
-                            let timeslot = partner.timeSlots![$0 % partner.timeSlots!.count]
-                            let startDate = viewModel.convertDate(timestamp: timeslot.startDate)
-                            let endDate = viewModel.convertDate(timestamp: timeslot.endDate)
-                            let isSelected = timeslot.id == $selectedTimeSlot.wrappedValue
-                            ZStack{
-                                RoundedRectangle(cornerRadius: 4).stroke().background(isSelected ? Color.blue : Color.white).frame(width: 120, height: 50).onTapGesture {
-                                    selectedTimeSlot = timeslot.id
+            ZStack {
+                VStack(spacing: 10) {
+                    HStack{
+                        Text("Select your time slot").font(.largeTitle).foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                    }.padding(.bottom,30)
+                    Spacer()
+                    ScrollView {
+                        LazyVGrid(columns: threeColumnGrid, spacing: 20) {
+                            // Display the item
+                            ForEach((0...partner.timeSlots!.count - 1), id: \.self) {
+                                let timeslot = partner.timeSlots![$0 % partner.timeSlots!.count]
+                                let startDate = viewModel.convertDate(timestamp: timeslot.startDate)
+                                let endDate = viewModel.convertDate(timestamp: timeslot.endDate)
+                                let isSelected = timeslot.id == $selectedTimeSlot.wrappedValue
+                                ZStack{
+                                    if timeslot.reservation == nil {
+                                        RoundedRectangle(cornerRadius: 4).stroke().background(isSelected ? Color.blue : Color.white).frame(width: 120, height: 50).onTapGesture {
+                                            selectedTimeSlot = timeslot.id
+                                        }
+                                        Text("\(startDate) - \(endDate)").padding().foregroundColor(isSelected ? Color.white : Color.blue)
+                                    }
+                                    else {
+                                        RoundedRectangle(cornerRadius: 4).stroke().background(Color.gray).frame(width: 120, height: 50)
+                                        Text("\(startDate) - \(endDate)").padding().foregroundColor(Color.white)
+                                    }
                                 }
-                                Text("\(startDate) - \(endDate)").padding().foregroundColor(isSelected ? Color.white : Color.blue)
                             }
                         }
                     }
-                }
-                Button(action: {
-                    print("Delete tapped!")
-                }) {
-                    HStack {
-                        Image(systemName: "cart")
-                            .font(.title)
-                        Text("Make reservation ! ")
-                            .fontWeight(.semibold)
-                            .font(.title)
+                    Button(action: {
+                        if selectedTimeSlot != nil {
+                            self.makeReservation()
+                        }
+                        else {
+                            timeSlotNotSelected.toggle()
+                            hasErrors.toggle()
+                        }
+                    }){
+                        HStack {
+                            Image(systemName: isReservationDone ? "checkmark" : "cart")
+                                .font(.title)
+                            Text("Make reservation ! ")
+                                .fontWeight(.semibold)
+                                .font(.title)
+                        }
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(isReservationDone ? Color.green : Color.blue )
+                        .animation(.easeIn, value: isReservationDone)
+                        .cornerRadius(40)
                     }
-                    .padding()
-                    .foregroundColor(.white)
-                    .background(Color.blue)
-                    .cornerRadius(40)
+                    .alert(isPresented: $hasErrors){
+                        Alert(
+                            title: Text("Attention"),
+                            message: Text(timeSlotNotSelected ? "Please select an available timeslot before reserving" : "Something went wrong with your reservation, please try again in a few minutes "),
+                            dismissButton: Alert.Button.default(
+                                Text("Got it"), action: {hasErrors = false; timeSlotNotSelected = false}
+                            )
+                        )
+                    }
+                    Spacer()
+                }.padding()
+                if viewModel.isLoading {
+                    ProgressView().frame(maxWidth: .infinity, alignment: .center)
                 }
-                Spacer()
-            }.padding()
+            }
         }
         else {
             Text("No TimeSlots available")
         }
         
+    }
+    func makeReservation() -> Void {
+        viewModel.createReservation(timeSlotId: self.selectedTimeSlot!, partnerId: self.partner.id){ isOk, errorMessage in
+            if isOk {
+                isReservationDone.toggle()
+            }
+            else {
+                hasErrors.toggle()
+            }
+            
+        }
     }
 }
 

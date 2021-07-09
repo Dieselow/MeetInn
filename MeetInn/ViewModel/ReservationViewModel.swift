@@ -22,18 +22,18 @@ class ReservationViewModel: ObservableObject {
     
     func createReservation(timeSlotId: String, partnerId: String, completion: @escaping (Bool,String?) -> Void) {
         if let user  = try? JSONDecoder().decode(UserModel.self, from: defaults.object(forKey: "currentUser") as! Data) {
-            let params = ["owner": user.Id, "invitedUsers": []] as? Dictionary<String, String>
+            let params = ["owner": user.Id] as Dictionary<String, String>
             guard !isLoading else { return }
             isLoading = true
             let resource = ReservationResource(body: params, id: timeSlotId, token: user.token)
             let request = ReservationRequest(request: resource.request)
             request.execute { [weak self] result,response,error in
                 self?.isLoading = false
-                if (result != nil) {
-                    completion(true,"oui ça marche")
+                if (error == nil) {
+                    completion(true,nil)
                 }
                 else {
-                    completion(false, "something happenned")
+                    completion(false, error)
                 }
             }
             

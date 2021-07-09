@@ -32,7 +32,7 @@ extension APIRequest: NetworkRequest {
         }
     }
     
-    func execute(withCompletion completion: @escaping ([Resource.ModelType]?,HTTPURLResponse?,Error?) -> Void) {
+    func execute(withCompletion completion: @escaping ([Resource.ModelType]?,HTTPURLResponse?,String?) -> Void) {
         load(resource.request, withCompletion: completion)
     }
 }

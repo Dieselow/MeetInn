@@ -21,7 +21,6 @@ extension ReservationRequest : NetworkRequest {
     func decode(_ data: Data) -> ModelType? {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .secondsSince1970
-            print(data)
             do {
                 return try decoder.decode(Timeslot.self, from: data)
             }
@@ -31,7 +30,7 @@ extension ReservationRequest : NetworkRequest {
             return nil
         }
     
-    func execute(withCompletion completion: @escaping (ModelType?,HTTPURLResponse?,Error?) -> Void) {
+    func execute(withCompletion completion: @escaping (ModelType?,HTTPURLResponse?,String?) -> Void) {
         load(request, withCompletion: completion)
     }
     
