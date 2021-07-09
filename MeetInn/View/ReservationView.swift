@@ -7,10 +7,19 @@
 
 import SwiftUI
 
+extension AnyTransition {
+    static var moveAndFade: AnyTransition {
+        let insertion = AnyTransition.move(edge: .trailing)
+                 .combined(with: .opacity)
+             let removal = AnyTransition.scale
+                 .combined(with: .opacity)
+             return .asymmetric(insertion: insertion, removal: removal)
+    }
+}
+
 struct ReservationView: View {
     @ObservedObject var viewModel = ReservationViewModel()
     var partner: PartnerModel
-    var threeColumnGrid = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     @State var selectedTimeSlot: String? = nil
     @State var isReservationDone = false
     @State var timeSlotNotSelected = false
@@ -22,30 +31,13 @@ struct ReservationView: View {
             if viewModel.timeslots.count > 0 {
                 VStack(spacing: 10) {
                     HStack{
-                        Text("Select your time slot").font(.largeTitle).foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                        Text("\(partner.name) Reservation").font(.largeTitle).foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                     }.padding(.bottom,30)
-                    Spacer()
-                    ScrollView {
-                        LazyVGrid(columns: threeColumnGrid, spacing: 20) {
-                            // Display the item
-                            ForEach((0...viewModel.timeslots.count - 1), id: \.self) {
-                                let timeslot = viewModel.timeslots[$0 % viewModel.timeslots.count]
-                                let startDate = viewModel.convertDate(timestamp: timeslot.startDate)
-                                let endDate = viewModel.convertDate(timestamp: timeslot.endDate)
-                                let isSelected = timeslot.id == $selectedTimeSlot.wrappedValue
-                                ZStack{
-                                    if timeslot.reservation == nil {
-                                        RoundedRectangle(cornerRadius: 4).stroke().background(isSelected ? Color.blue : Color.white).frame(width: 120, height: 50).onTapGesture {
-                                            selectedTimeSlot = timeslot.id
-                                        }
-                                        Text("\(startDate) - \(endDate)").padding().foregroundColor(isSelected ? Color.white : Color.blue)
-                                    }
-                                    else {
-                                        RoundedRectangle(cornerRadius: 4).stroke().background(Color.gray).frame(width: 120, height: 50)
-                                        Text("\(startDate) - \(endDate)").padding().foregroundColor(Color.white)
-                                    }
-                                }
-                            }
+                    Text("Choose your time").font(.footnote).foregroundColor(.gray).bold()
+                    List {
+                        ForEach((0...viewModel.timeslotsDates.count - 1), id:\.self){
+                            let timeslotDate : TimeslotDate = viewModel.timeslotsDates[$0 % viewModel.timeslotsDates.count].value
+                            TimeslotView(timeslotDate: timeslotDate, selectedTimeSlot: $selectedTimeSlot).transition(.moveAndFade)
                         }
                     }
                     Button(action: {
@@ -108,7 +100,6 @@ struct ReservationView: View {
     
     func fetchTimeslots(){
         viewModel.getTimeSlots(partnerId: self.partner.id)
-        viewModel.getTimeStampsDays(timestamps: viewModel.timeslots)
     }
 }
 

@@ -20,6 +20,7 @@
 		3F6B27C42696CEAE00DE0627 /* ReservationResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B27C32696CEAE00DE0627 /* ReservationResource.swift */; };
 		3F6B27C62696D04700DE0627 /* ReservationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B27C52696D04700DE0627 /* ReservationRequest.swift */; };
 		3F6BB112264FDF070098825B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BB111264FDF070098825B /* LoginView.swift */; };
+		3F795C6B2698BACF0087FA0C /* TimeslotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F795C6A2698BACF0087FA0C /* TimeslotView.swift */; };
 		3FA4A423266E802A00E8A75E /* UserLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4A422266E802A00E8A75E /* UserLoginModel.swift */; };
 		3FA4A425266E824200E8A75E /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4A424266E824200E8A75E /* RegisterViewModel.swift */; };
 		3FA4A427266E826300E8A75E /* UserRegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4A426266E826300E8A75E /* UserRegisterModel.swift */; };
@@ -60,6 +61,7 @@
 		3F6B27C32696CEAE00DE0627 /* ReservationResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationResource.swift; sourceTree = "<group>"; };
 		3F6B27C52696D04700DE0627 /* ReservationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationRequest.swift; sourceTree = "<group>"; };
 		3F6BB111264FDF070098825B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		3F795C6A2698BACF0087FA0C /* TimeslotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeslotView.swift; sourceTree = "<group>"; };
 		3FA4A422266E802A00E8A75E /* UserLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginModel.swift; sourceTree = "<group>"; };
 		3FA4A424266E824200E8A75E /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		3FA4A426266E826300E8A75E /* UserRegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterModel.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				3F35741526948CC000ED06F0 /* PartnerRowView.swift */,
 				3F35741926949C2800ED06F0 /* PartnerDetail.swift */,
 				3F0E64C12695B6E6001DF87B /* ReservationView.swift */,
+				3F795C6A2698BACF0087FA0C /* TimeslotView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				3F6B27C22696CE4C00DE0627 /* ReservationModel.swift in Sources */,
 				3F35741226948BEC00ED06F0 /* PartnerRequest.swift in Sources */,
 				3FFAEC592673B3DA0020DF0A /* UserRegistrationRequest.swift in Sources */,
+				3F795C6B2698BACF0087FA0C /* TimeslotView.swift in Sources */,
 				3FD3702A266E4E5F00B60B10 /* LoginViewModel.swift in Sources */,
 				3FA4A423266E802A00E8A75E /* UserLoginModel.swift in Sources */,
 				3FFAEC5F2673BC8A0020DF0A /* UserLoginResource.swift in Sources */,

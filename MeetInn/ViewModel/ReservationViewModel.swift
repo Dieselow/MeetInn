@@ -66,6 +66,8 @@ class ReservationViewModel: ObservableObject {
             timeslotDate.dayName = dateFormatter.string(from: date)
             dateFormatter.dateFormat = "LLLL"
             timeslotDate.month = dateFormatter.string(from: date)
+            timeslotDate.dayNumber = day
+            timeslotDate.year = year
             let slotIndex = month + day + year
             let keyExists = slots[String(slotIndex)] != nil
             if keyExists {
