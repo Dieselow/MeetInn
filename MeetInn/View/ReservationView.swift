@@ -15,6 +15,7 @@ struct ReservationView: View {
     @State var isReservationDone = false
     @State var timeSlotNotSelected = false
     @State var hasErrors = false
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         if partner.timeSlots?.count ?? 0 > 0 {
@@ -58,7 +59,7 @@ struct ReservationView: View {
                     }){
                         HStack {
                             Image(systemName: isReservationDone ? "checkmark" : "cart")
-                                .font(.title)
+                                .font(.title).rotationEffect(isReservationDone ? .degrees(360) : .degrees(0))
                             Text("Make reservation ! ")
                                 .fontWeight(.semibold)
                                 .font(.title)
@@ -94,6 +95,9 @@ struct ReservationView: View {
         viewModel.createReservation(timeSlotId: self.selectedTimeSlot!, partnerId: self.partner.id){ isOk, errorMessage in
             if isOk {
                 isReservationDone.toggle()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    presentationMode.wrappedValue.dismiss()
+                }
             }
             else {
                 hasErrors.toggle()

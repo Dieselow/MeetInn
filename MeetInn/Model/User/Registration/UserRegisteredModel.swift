@@ -23,7 +23,6 @@ struct UserRegisteredModel {
     let password: String?
     let createdAt: String
     let roles: [Roles]
-    let partners: [Roles]
     
 }
 extension UserRegisteredModel: Decodable {
@@ -33,6 +32,5 @@ extension UserRegisteredModel: Decodable {
         case password = "password"
         case createdAt = "createDate"
         case roles = "roles"
-        case partners = "partners"
     }
 }

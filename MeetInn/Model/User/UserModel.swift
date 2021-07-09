@@ -11,7 +11,7 @@ struct UserModel: Encodable {
     let email: String
     let createdAt: Date
     let expiresAt: Date
-    let roles: [Roles]?
+    let roles: String
     let token: String
 }
 
@@ -20,7 +20,7 @@ extension UserModel: Decodable {
         case Id = "id"
         case createdAt = "iat"
         case email = "sub"
-        case roles = "roles"
+        case roles = "role"
         case expiresAt = "exp"
         case token = "token"
     }
