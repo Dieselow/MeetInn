@@ -22,10 +22,10 @@ struct TimeslotView: View {
             HStack {
                 Text("\(timeslotDate.dayName), \(timeslotDate.dayNumber) \(timeslotDate.month) \(timeslotDate.year)")
                 Image(systemName: "chevron.right.circle")
-                                      .imageScale(.large)
-                                      .rotationEffect(.degrees(showDetail ? 90 : 0))
-                                      .scaleEffect(showDetail ? 1.5 : 1)
-                                      .padding()
+                    .imageScale(.large)
+                    .rotationEffect(.degrees(showDetail ? 90 : 0))
+                    .scaleEffect(showDetail ? 1.5 : 1)
+                    .padding()
             }
             
         }
