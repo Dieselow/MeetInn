@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct ContentView: View {
     var body: some View {
@@ -16,15 +17,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-struct ShowingSheetKey: EnvironmentKey {
-    static let defaultValue: Binding<Bool>? = nil
-}
-
-extension EnvironmentValues {
-    var showingSheet: Binding<Bool>? {
-        get { self[ShowingSheetKey.self] }
-        set { self[ShowingSheetKey.self] = newValue }
     }
 }

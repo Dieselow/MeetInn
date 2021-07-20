@@ -16,6 +16,8 @@
 		3F35741626948CC000ED06F0 /* PartnerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F35741526948CC000ED06F0 /* PartnerRowView.swift */; };
 		3F35741826948D3000ED06F0 /* PartnersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F35741726948D3000ED06F0 /* PartnersViewModel.swift */; };
 		3F35741A26949C2800ED06F0 /* PartnerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F35741926949C2800ED06F0 /* PartnerDetail.swift */; };
+		3F38B53A269AEA0D00D8E068 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F38B539269AEA0D00D8E068 /* Notifications.swift */; };
+		3F47B9C226A7063C00992CB1 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47B9C126A7063C00992CB1 /* ViewUtils.swift */; };
 		3F6B27C22696CE4C00DE0627 /* ReservationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B27C12696CE4C00DE0627 /* ReservationModel.swift */; };
 		3F6B27C42696CEAE00DE0627 /* ReservationResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B27C32696CEAE00DE0627 /* ReservationResource.swift */; };
 		3F6B27C62696D04700DE0627 /* ReservationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B27C52696D04700DE0627 /* ReservationRequest.swift */; };
@@ -57,6 +59,8 @@
 		3F35741526948CC000ED06F0 /* PartnerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerRowView.swift; sourceTree = "<group>"; };
 		3F35741726948D3000ED06F0 /* PartnersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnersViewModel.swift; sourceTree = "<group>"; };
 		3F35741926949C2800ED06F0 /* PartnerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetail.swift; sourceTree = "<group>"; };
+		3F38B539269AEA0D00D8E068 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		3F47B9C126A7063C00992CB1 /* ViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
 		3F6B27C12696CE4C00DE0627 /* ReservationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationModel.swift; sourceTree = "<group>"; };
 		3F6B27C32696CEAE00DE0627 /* ReservationResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationResource.swift; sourceTree = "<group>"; };
 		3F6B27C52696D04700DE0627 /* ReservationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationRequest.swift; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 				3FC733722673792100C8643A /* ApiRequest.swift */,
 				3FFAEC622673BE1D0020DF0A /* JWTTokenModel.swift */,
 				3F35740A2694845C00ED06F0 /* Exceptions.swift */,
+				3F38B539269AEA0D00D8E068 /* Notifications.swift */,
+				3F47B9C126A7063C00992CB1 /* ViewUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -328,6 +334,7 @@
 			files = (
 				3FE4405026985F37002C32D7 /* TimeslotRequest.swift in Sources */,
 				3F35741826948D3000ED06F0 /* PartnersViewModel.swift in Sources */,
+				3F47B9C226A7063C00992CB1 /* ViewUtils.swift in Sources */,
 				3F35741026948BB700ED06F0 /* PartnerResource.swift in Sources */,
 				3FC733732673792100C8643A /* ApiRequest.swift in Sources */,
 				3F35740B2694845C00ED06F0 /* Exceptions.swift in Sources */,
@@ -341,6 +348,7 @@
 				3FA4A425266E824200E8A75E /* RegisterViewModel.swift in Sources */,
 				3FD5B426264E6A15008A560E /* ContentView.swift in Sources */,
 				3F0E64C42695BCA7001DF87B /* ReservationViewModel.swift in Sources */,
+				3F38B53A269AEA0D00D8E068 /* Notifications.swift in Sources */,
 				3F35741A26949C2800ED06F0 /* PartnerDetail.swift in Sources */,
 				3FFAEC5326738EDE0020DF0A /* UserRegistrationResource.swift in Sources */,
 				3FFAEC632673BE1D0020DF0A /* JWTTokenModel.swift in Sources */,
