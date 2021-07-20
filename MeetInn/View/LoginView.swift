@@ -15,7 +15,7 @@ struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
     @ObservedObject var viewModel = LoginViewModel()
-    @State var isSubmit = false    
+    @State var isSubmit = false
 
     @Environment(\.presentationMode) var presentationMode
     

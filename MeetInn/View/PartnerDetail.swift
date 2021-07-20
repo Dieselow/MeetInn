@@ -22,7 +22,7 @@ struct PartnerDetail: View {
             if image != nil {
                 CircleImage(image: image!)
                     .offset(y: -200)
-                    //.padding(.bottom, -250)
+                //.padding(.bottom, -250)
             }
             else {
                 ProgressView().frame(maxWidth: .infinity, alignment: .center)
@@ -32,7 +32,7 @@ struct PartnerDetail: View {
                 Text(partner.name)
                     .font(.title)
                     .foregroundColor(.primary)
-
+                
                 HStack {
                     Text(partner.address?.name ?? "Cupertino")
                     Spacer()
@@ -40,9 +40,9 @@ struct PartnerDetail: View {
                 }
                 .font(.subheadline)
                 .foregroundColor(.secondary)
-
+                
                 Divider()
-
+                
                 Text("About \(partner.name)")
                     .font(.title2)
                 Text(partner.phoneNumber)
@@ -75,8 +75,12 @@ struct PartnerDetail: View {
                                 Text("Press ok here"), action: { shouldRedirectToLogin.toggle() }
                             )
                         )
-                    }.sheet(isPresented:$shouldRedirectToLogin , content: {
-                        LoginView()
+                    }.sheet(isPresented:$shouldRedirectToLogin ,onDismiss: {
+                        if  UserDefaults.standard.object(forKey: "currentUser") != nil{
+                            isConnected.toggle()
+                        }
+                    }, content: {
+                        LoginView()                    
                     }).sheet(isPresented:$isConnected , content: {
                         ReservationView(partner: partner)
                     })
@@ -89,11 +93,11 @@ struct PartnerDetail: View {
     
     func setImage(from url: String?) {
         guard let imageURL = URL(string: url ?? "https://shorturl.at/psuP8") else { return }
-
-            // just not to cause a deadlock in UI!
+        
+        // just not to cause a deadlock in UI!
         DispatchQueue.global().async {
             guard let imageData = try? Data(contentsOf: imageURL) else { return }
-
+            
             let image = UIImage(data: imageData)
             DispatchQueue.main.async {
                 if image != nil {
@@ -128,8 +132,8 @@ struct MapView: View {
     var coordinate: CLLocationCoordinate2D
     @State private var region = MKCoordinateRegion()
     @State private var markers: [Marker] = []
-
-
+    
+    
     var body: some View {
         Map(coordinateRegion: $region,showsUserLocation: false,  annotationItems: markers){
             marker in marker.location
@@ -139,11 +143,11 @@ struct MapView: View {
         }
     }
     private func setRegion(_ coordinate: CLLocationCoordinate2D) {
-           region = MKCoordinateRegion(
-               center: coordinate,
-               span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-           )
-       }
+        region = MKCoordinateRegion(
+            center: coordinate,
+            span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
+        )
+    }
 }
 
 

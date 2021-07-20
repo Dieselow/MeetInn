@@ -87,6 +87,7 @@ struct ReservationView: View {
         viewModel.createReservation(timeSlotId: self.selectedTimeSlot!, partnerId: self.partner.id){ isOk, errorMessage in
             if isOk {
                 isReservationDone.toggle()
+                SchedulingProvider.addEventToCalendar(title: partner.name, startDate: Date(), endDate: Date(),latitude: partner.address?.latitude ?? 34.011_286, longitude: partner.address?.longitude ?? -116.166_868)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                     presentationMode.wrappedValue.dismiss()
                 }
