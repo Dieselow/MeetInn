@@ -27,16 +27,16 @@ struct PartnerDetail: View {
             else {
                 ProgressView().frame(maxWidth: .infinity, alignment: .center)
             }
-            Spacer()
+            
             VStack(alignment: .leading) {
                 Text(partner.name)
                     .font(.title)
-                    .foregroundColor(.primary)
+                    .foregroundColor(.primary).padding(5)
                 
                 HStack {
-                    Text(partner.address?.name ?? "Cupertino")
+                    Text(partner.address?.name ?? "Cupertino").padding(5)
                     Spacer()
-                    Text(partner.address?.region ?? "California")
+                    Text(partner.address?.region ?? "California").padding(5)
                 }
                 .font(.subheadline)
                 .foregroundColor(.secondary)
@@ -44,10 +44,11 @@ struct PartnerDetail: View {
                 Divider()
                 
                 Text("About \(partner.name)")
-                    .font(.title2)
-                Text(partner.phoneNumber)
+                    .font(.title2).padding(5)
+                Text(partner.phoneNumber).padding(5)
             }
             .padding(.top,-220)
+            Spacer()
             VStack{
                 HStack{
                     Button(action: {
@@ -85,7 +86,7 @@ struct PartnerDetail: View {
                         ReservationView(partner: partner)
                     })
                 }
-            }.padding(.top,-100)
+            }.padding()
         }.onAppear{
             setImage(from: partner.photoUrl)
         }
