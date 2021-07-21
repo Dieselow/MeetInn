@@ -11,7 +11,7 @@ struct TimeslotView: View {
     var timeslotDate: TimeslotDate
     @ObservedObject var viewModel = ReservationViewModel()
     var threeColumnGrid = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
-    @Binding var selectedTimeSlot: String?
+    @Binding var selectedTimeSlot: Timeslot?
     @State private var showDetail = false
     var body: some View {
         Button(action: {
@@ -37,11 +37,11 @@ struct TimeslotView: View {
                     let timeslot = timeslotDate.timeslots[$0 % timeslotDate.timeslots.count]
                     let startDate = viewModel.convertDate(timestamp: timeslot.startDate)
                     let endDate = viewModel.convertDate(timestamp: timeslot.endDate)
-                    let isSelected = timeslot.id == $selectedTimeSlot.wrappedValue
+                    let isSelected = timeslot.id == $selectedTimeSlot.wrappedValue?.id
                     ZStack{
                         if timeslot.reservation == nil {
                             RoundedRectangle(cornerRadius: 4).stroke().background(isSelected ? Color.blue : Color.white).frame(width: 120, height: 50).onTapGesture {
-                                selectedTimeSlot = timeslot.id
+                                selectedTimeSlot = timeslot
                             }
                             Text("\(startDate) - \(endDate)").padding().foregroundColor(isSelected ? Color.white : Color.blue)
                         }

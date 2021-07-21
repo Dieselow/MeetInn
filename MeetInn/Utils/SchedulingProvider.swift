@@ -14,7 +14,6 @@ class SchedulingProvider {
     static func addEventToCalendar(title: String, startDate: Date, endDate: Date,latitude: Double,longitude: Double, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
         let eventStore : EKEventStore = EKEventStore()
         
-        // 'EKEntityTypeReminder' or 'EKEntityTypeEvent'
         
         eventStore.requestAccess(to: .event) { (granted, error) in
             

@@ -22,6 +22,7 @@ class ReservationViewModel: ObservableObject {
     private var request: ReservationRequest?
     @Published var timeslots: Array<Timeslot> = []
     @Published var timeslotsDates : Array<(key: String, value: TimeslotDate)> = []
+    @Published var userReservations: [Timeslot] = []
     
     
     func getTimeSlots(partnerId: String) -> Void {
@@ -31,15 +32,39 @@ class ReservationViewModel: ObservableObject {
         let request = TimeslotRequest(request: resource.request)
         request.execute { [weak self] data,response,error in
             self?.isLoading = false
-            
+        
             if data != nil {
                 self?.timeslots = data!
                 self?.timeslotsDates = (self?.getTimeStampsDays(timestamps: (self?.timeslots)!))!
             }
             
         }
-        
     }
+    func getUsersReservation() -> Void{
+        guard !isLoading else { return }
+        isLoading = true
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .secondsSince1970
+        do {
+            let user = try decoder.decode(UserModel.self, from: defaults.object(forKey: "currentUser") as! Data)
+            let resource = UserReservationResource(id: user.Id,token: user.token)
+            let request = UserReservationRequest(request: resource.request)
+            
+            request.execute { [weak self] data,response,error in
+                self?.isLoading = false
+                
+                if data != nil {
+                    self?.userReservations = data!
+                    print(data!)
+                }
+            }
+        }
+        catch  {
+            print(error)
+            return
+        }
+    }
+    
     func convertDate(timestamp: Int) -> String {
         let date = Date(timeIntervalSince1970: Double(timestamp))
         let dateFormatter = DateFormatter()
@@ -91,6 +116,19 @@ class ReservationViewModel: ObservableObject {
         
         return slots.sorted(by: { $0.0 < $1.0 })
         
+    }
+    
+    func getTimeStampLongDate(timeStamp: Int)-> String {
+        let date = Date(timeIntervalSince1970: Double(timeStamp))
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
+        dateFormatter.locale = NSLocale.current
+        let components = Calendar.current.dateComponents([.day, .month,.year], from: date)
+        let day = components.day!
+        let month = components.month!
+        let year = components.year!
+        
+        return "\(self.convertDate(timestamp: timeStamp)) \(day)/\(month)/\(year)"
     }
     
     func createReservation(timeSlotId: String, partnerId: String, completion: @escaping (Bool,String?) -> Void) {

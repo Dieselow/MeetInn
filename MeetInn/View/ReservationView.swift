@@ -20,7 +20,7 @@ extension AnyTransition {
 struct ReservationView: View {
     @ObservedObject var viewModel = ReservationViewModel()
     var partner: PartnerModel
-    @State var selectedTimeSlot: String? = nil
+    @State var selectedTimeSlot: Timeslot? = nil
     @State var isReservationDone = false
     @State var timeSlotNotSelected = false
     @State var hasErrors = false
@@ -84,10 +84,10 @@ struct ReservationView: View {
         
     }
     func makeReservation() -> Void {
-        viewModel.createReservation(timeSlotId: self.selectedTimeSlot!, partnerId: self.partner.id){ isOk, errorMessage in
+        viewModel.createReservation(timeSlotId: self.selectedTimeSlot!.id, partnerId: self.partner.id){ isOk, errorMessage in
             if isOk {
                 isReservationDone.toggle()
-                SchedulingProvider.addEventToCalendar(title: partner.name, startDate: Date(), endDate: Date(),latitude: partner.address?.latitude ?? 34.011_286, longitude: partner.address?.longitude ?? -116.166_868)
+                SchedulingProvider.addEventToCalendar(title: partner.name, startDate: Date(timeIntervalSince1970: Double(selectedTimeSlot!.startDate)), endDate:Date(timeIntervalSince1970: Double(selectedTimeSlot!.endDate)),latitude: partner.address?.latitude ?? 34.011_286, longitude: partner.address?.longitude ?? -116.166_868)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                     presentationMode.wrappedValue.dismiss()
                 }
