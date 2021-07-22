@@ -11,6 +11,7 @@ struct HomeView: View {
     @ObservedObject var viewModel = PartnersViewModel()
     @State var needRefresh: Bool = false
     @State private var showingProfile = false
+    @State var user : UserModel? = nil
     
     var body: some View {
         NavigationView {
@@ -25,7 +26,7 @@ struct HomeView: View {
                 }
             }.navigationTitle("Partners")
             .toolbar {
-                if( getUser() != nil) {
+                if(user != nil) {
                     Button(action: { showingProfile.toggle() }) {
                         Image(systemName: "person.crop.circle")
                             .accessibilityLabel("User Profile")
@@ -33,22 +34,27 @@ struct HomeView: View {
                 }
             }
             .sheet(isPresented: $showingProfile) {
-                ProfileView(profile: self.getUser()!)
+                ProfileView(profile: self.user)
             }
             
-        }.onAppear(perform: fetchPartners)
+        }.onAppear(perform: fetchPartners).onAppear(perform: getUser)
         
     }
-    private func getUser() -> UserModel?{
+    
+    private func getUser() -> Void{
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .secondsSince1970
-        do {
-        return try decoder.decode(UserModel.self, from: UserDefaults.standard.object(forKey: "currentUser") as! Data)
+        let userData = UserDefaults.standard.object(forKey: "currentUser")
+        if userData != nil {
+            do {
+                user =  try decoder.decode(UserModel.self, from: userData as! Data)
+            }
+            catch  {
+                print(error)
+            }
         }
-        catch  {
-            print(error)
-        }
-        return nil
+        
+        return
     }
     
     private func fetchPartners() -> Void {

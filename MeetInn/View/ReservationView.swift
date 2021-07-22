@@ -65,7 +65,7 @@ struct ReservationView: View {
                     .alert(isPresented: $hasErrors){
                         Alert(
                             title: Text("Attention"),
-                            message: Text(timeSlotNotSelected ? "Please select an available timeslot before reserving" : "Something went wrong with your reservation, please try again in a few minutes "),
+                            message: Text(timeSlotNotSelected ? "Please select an available timeslot before reserving" : "Something went wrong with your reservation, please try again in a few minutes"),
                             dismissButton: Alert.Button.default(
                                 Text("Got it"), action: {hasErrors = false; timeSlotNotSelected = false}
                             )

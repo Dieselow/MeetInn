@@ -20,13 +20,15 @@ struct PartnerDetail: View {
                 .ignoresSafeArea(edges: .top)
                 .frame(height: 300)
             if image != nil {
+                
                 CircleImage(image: image!)
                     .offset(y: -200)
-                //.padding(.bottom, -250)
+                .padding(.bottom, -50)
             }
             else {
                 ProgressView().frame(maxWidth: .infinity, alignment: .center)
             }
+            Spacer()
             
             VStack(alignment: .leading) {
                 Text(partner.name)
@@ -73,7 +75,7 @@ struct PartnerDetail: View {
                             title: Text("Attention"),
                             message: Text("To make a reservation, you need to log in"),
                             dismissButton: Alert.Button.default(
-                                Text("Press ok here"), action: { shouldRedirectToLogin.toggle() }
+                                Text("Log In"), action: { shouldRedirectToLogin.toggle() }
                             )
                         )
                     }.sheet(isPresented:$shouldRedirectToLogin ,onDismiss: {
