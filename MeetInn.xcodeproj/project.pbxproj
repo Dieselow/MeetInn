@@ -16,10 +16,17 @@
 		3F35741626948CC000ED06F0 /* PartnerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F35741526948CC000ED06F0 /* PartnerRowView.swift */; };
 		3F35741826948D3000ED06F0 /* PartnersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F35741726948D3000ED06F0 /* PartnersViewModel.swift */; };
 		3F35741A26949C2800ED06F0 /* PartnerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F35741926949C2800ED06F0 /* PartnerDetail.swift */; };
+		3F47B9C226A7063C00992CB1 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47B9C126A7063C00992CB1 /* ViewUtils.swift */; };
+		3F47B9C426A7150000992CB1 /* SchedulingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47B9C326A7150000992CB1 /* SchedulingProvider.swift */; };
 		3F6B27C22696CE4C00DE0627 /* ReservationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B27C12696CE4C00DE0627 /* ReservationModel.swift */; };
 		3F6B27C42696CEAE00DE0627 /* ReservationResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B27C32696CEAE00DE0627 /* ReservationResource.swift */; };
 		3F6B27C62696D04700DE0627 /* ReservationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B27C52696D04700DE0627 /* ReservationRequest.swift */; };
 		3F6BB112264FDF070098825B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BB111264FDF070098825B /* LoginView.swift */; };
+		3F795C6B2698BACF0087FA0C /* TimeslotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F795C6A2698BACF0087FA0C /* TimeslotView.swift */; };
+		3F80E0FA26A863080077AD3A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F80E0F926A863080077AD3A /* ProfileView.swift */; };
+		3F80E0FE26A863D30077AD3A /* UserReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F80E0FD26A863D30077AD3A /* UserReservationView.swift */; };
+		3F80E10026A865D70077AD3A /* UserReservationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F80E0FF26A865D70077AD3A /* UserReservationRequest.swift */; };
+		3F80E10226A865E30077AD3A /* UserReservationResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F80E10126A865E30077AD3A /* UserReservationResource.swift */; };
 		3FA4A423266E802A00E8A75E /* UserLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4A422266E802A00E8A75E /* UserLoginModel.swift */; };
 		3FA4A425266E824200E8A75E /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4A424266E824200E8A75E /* RegisterViewModel.swift */; };
 		3FA4A427266E826300E8A75E /* UserRegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4A426266E826300E8A75E /* UserRegisterModel.swift */; };
@@ -33,7 +40,6 @@
 		3FD5B426264E6A15008A560E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD5B425264E6A15008A560E /* ContentView.swift */; };
 		3FD5B428264E6A16008A560E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FD5B427264E6A16008A560E /* Assets.xcassets */; };
 		3FD5B42B264E6A16008A560E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FD5B42A264E6A16008A560E /* Preview Assets.xcassets */; };
-		3FE4404B26985A27002C32D7 /* SwiftUIRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 3FE4404A26985A27002C32D7 /* SwiftUIRefresh */; };
 		3FE4404E26985EED002C32D7 /* TimeslotResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4404D26985EED002C32D7 /* TimeslotResource.swift */; };
 		3FE4405026985F37002C32D7 /* TimeslotRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4404F26985F37002C32D7 /* TimeslotRequest.swift */; };
 		3FFAEC5326738EDE0020DF0A /* UserRegistrationResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFAEC5226738EDE0020DF0A /* UserRegistrationResource.swift */; };
@@ -56,10 +62,17 @@
 		3F35741526948CC000ED06F0 /* PartnerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerRowView.swift; sourceTree = "<group>"; };
 		3F35741726948D3000ED06F0 /* PartnersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnersViewModel.swift; sourceTree = "<group>"; };
 		3F35741926949C2800ED06F0 /* PartnerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetail.swift; sourceTree = "<group>"; };
+		3F47B9C126A7063C00992CB1 /* ViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
+		3F47B9C326A7150000992CB1 /* SchedulingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulingProvider.swift; sourceTree = "<group>"; };
 		3F6B27C12696CE4C00DE0627 /* ReservationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationModel.swift; sourceTree = "<group>"; };
 		3F6B27C32696CEAE00DE0627 /* ReservationResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationResource.swift; sourceTree = "<group>"; };
 		3F6B27C52696D04700DE0627 /* ReservationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationRequest.swift; sourceTree = "<group>"; };
 		3F6BB111264FDF070098825B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		3F795C6A2698BACF0087FA0C /* TimeslotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeslotView.swift; sourceTree = "<group>"; };
+		3F80E0F926A863080077AD3A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		3F80E0FD26A863D30077AD3A /* UserReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReservationView.swift; sourceTree = "<group>"; };
+		3F80E0FF26A865D70077AD3A /* UserReservationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReservationRequest.swift; sourceTree = "<group>"; };
+		3F80E10126A865E30077AD3A /* UserReservationResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReservationResource.swift; sourceTree = "<group>"; };
 		3FA4A422266E802A00E8A75E /* UserLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginModel.swift; sourceTree = "<group>"; };
 		3FA4A424266E824200E8A75E /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		3FA4A426266E826300E8A75E /* UserRegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterModel.swift; sourceTree = "<group>"; };
@@ -91,7 +104,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FE4404B26985A27002C32D7 /* SwiftUIRefresh in Frameworks */,
 				3FFAEC5D2673BC7C0020DF0A /* JWTDecode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,6 +127,8 @@
 				3F6B27C12696CE4C00DE0627 /* ReservationModel.swift */,
 				3F6B27C32696CEAE00DE0627 /* ReservationResource.swift */,
 				3F6B27C52696D04700DE0627 /* ReservationRequest.swift */,
+				3F80E0FF26A865D70077AD3A /* UserReservationRequest.swift */,
+				3F80E10126A865E30077AD3A /* UserReservationResource.swift */,
 			);
 			path = Reservation;
 			sourceTree = "<group>";
@@ -128,6 +142,9 @@
 				3F35741526948CC000ED06F0 /* PartnerRowView.swift */,
 				3F35741926949C2800ED06F0 /* PartnerDetail.swift */,
 				3F0E64C12695B6E6001DF87B /* ReservationView.swift */,
+				3F795C6A2698BACF0087FA0C /* TimeslotView.swift */,
+				3F80E0F926A863080077AD3A /* ProfileView.swift */,
+				3F80E0FD26A863D30077AD3A /* UserReservationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -150,6 +167,8 @@
 				3FC733722673792100C8643A /* ApiRequest.swift */,
 				3FFAEC622673BE1D0020DF0A /* JWTTokenModel.swift */,
 				3F35740A2694845C00ED06F0 /* Exceptions.swift */,
+				3F47B9C126A7063C00992CB1 /* ViewUtils.swift */,
+				3F47B9C326A7150000992CB1 /* SchedulingProvider.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -264,7 +283,6 @@
 			name = MeetInn;
 			packageProductDependencies = (
 				3FFAEC5C2673BC7C0020DF0A /* JWTDecode */,
-				3FE4404A26985A27002C32D7 /* SwiftUIRefresh */,
 			);
 			productName = MeetInn;
 			productReference = 3FD5B420264E6A15008A560E /* MeetInn.app */;
@@ -295,7 +313,6 @@
 			mainGroup = 3FD5B417264E6A15008A560E;
 			packageReferences = (
 				3FFAEC5B2673BC7C0020DF0A /* XCRemoteSwiftPackageReference "JWTDecode.swift" */,
-				3FE4404926985A27002C32D7 /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */,
 			);
 			productRefGroup = 3FD5B421264E6A15008A560E /* Products */;
 			projectDirPath = "";
@@ -325,17 +342,22 @@
 			files = (
 				3FE4405026985F37002C32D7 /* TimeslotRequest.swift in Sources */,
 				3F35741826948D3000ED06F0 /* PartnersViewModel.swift in Sources */,
+				3F80E10026A865D70077AD3A /* UserReservationRequest.swift in Sources */,
+				3F47B9C226A7063C00992CB1 /* ViewUtils.swift in Sources */,
 				3F35741026948BB700ED06F0 /* PartnerResource.swift in Sources */,
 				3FC733732673792100C8643A /* ApiRequest.swift in Sources */,
 				3F35740B2694845C00ED06F0 /* Exceptions.swift in Sources */,
+				3F80E0FA26A863080077AD3A /* ProfileView.swift in Sources */,
 				3F6BB112264FDF070098825B /* LoginView.swift in Sources */,
 				3FFAEC612673BCCB0020DF0A /* UserLoginRequest.swift in Sources */,
 				3F6B27C62696D04700DE0627 /* ReservationRequest.swift in Sources */,
 				3FC7336F2673786100C8643A /* ApiResource.swift in Sources */,
+				3F47B9C426A7150000992CB1 /* SchedulingProvider.swift in Sources */,
 				3F35741626948CC000ED06F0 /* PartnerRowView.swift in Sources */,
 				3FD37026266E490800B60B10 /* RegisterView.swift in Sources */,
 				3FE4404E26985EED002C32D7 /* TimeslotResource.swift in Sources */,
 				3FA4A425266E824200E8A75E /* RegisterViewModel.swift in Sources */,
+				3F80E10226A865E30077AD3A /* UserReservationResource.swift in Sources */,
 				3FD5B426264E6A15008A560E /* ContentView.swift in Sources */,
 				3F0E64C42695BCA7001DF87B /* ReservationViewModel.swift in Sources */,
 				3F35741A26949C2800ED06F0 /* PartnerDetail.swift in Sources */,
@@ -344,9 +366,11 @@
 				3F6B27C22696CE4C00DE0627 /* ReservationModel.swift in Sources */,
 				3F35741226948BEC00ED06F0 /* PartnerRequest.swift in Sources */,
 				3FFAEC592673B3DA0020DF0A /* UserRegistrationRequest.swift in Sources */,
+				3F795C6B2698BACF0087FA0C /* TimeslotView.swift in Sources */,
 				3FD3702A266E4E5F00B60B10 /* LoginViewModel.swift in Sources */,
 				3FA4A423266E802A00E8A75E /* UserLoginModel.swift in Sources */,
 				3FFAEC5F2673BC8A0020DF0A /* UserLoginResource.swift in Sources */,
+				3F80E0FE26A863D30077AD3A /* UserReservationView.swift in Sources */,
 				3F0E64C22695B6E6001DF87B /* ReservationView.swift in Sources */,
 				3FC7336B2673778600C8643A /* UserRegisteredModel.swift in Sources */,
 				3FD5B424264E6A15008A560E /* MeetInnApp.swift in Sources */,
@@ -546,14 +570,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3FE4404926985A27002C32D7 /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/timbersoftware/SwiftUIRefresh.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.3;
-			};
-		};
 		3FFAEC5B2673BC7C0020DF0A /* XCRemoteSwiftPackageReference "JWTDecode.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/auth0/JWTDecode.swift.git";
@@ -565,11 +581,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3FE4404A26985A27002C32D7 /* SwiftUIRefresh */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3FE4404926985A27002C32D7 /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */;
-			productName = SwiftUIRefresh;
-		};
 		3FFAEC5C2673BC7C0020DF0A /* JWTDecode */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3FFAEC5B2673BC7C0020DF0A /* XCRemoteSwiftPackageReference "JWTDecode.swift" */;

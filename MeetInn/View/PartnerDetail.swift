@@ -20,34 +20,37 @@ struct PartnerDetail: View {
                 .ignoresSafeArea(edges: .top)
                 .frame(height: 300)
             if image != nil {
+                
                 CircleImage(image: image!)
                     .offset(y: -200)
-                    //.padding(.bottom, -250)
+                .padding(.bottom, -50)
             }
             else {
                 ProgressView().frame(maxWidth: .infinity, alignment: .center)
             }
             Spacer()
+            
             VStack(alignment: .leading) {
                 Text(partner.name)
                     .font(.title)
-                    .foregroundColor(.primary)
-
+                    .foregroundColor(.primary).padding(5)
+                
                 HStack {
-                    Text(partner.address?.name ?? "Cupertino")
+                    Text(partner.address?.name ?? "Cupertino").padding(5)
                     Spacer()
-                    Text(partner.address?.region ?? "California")
+                    Text(partner.address?.region ?? "California").padding(5)
                 }
                 .font(.subheadline)
                 .foregroundColor(.secondary)
-
+                
                 Divider()
-
+                
                 Text("About \(partner.name)")
-                    .font(.title2)
-                Text(partner.phoneNumber)
+                    .font(.title2).padding(5)
+                Text(partner.phoneNumber).padding(5)
             }
             .padding(.top,-220)
+            Spacer()
             VStack{
                 HStack{
                     Button(action: {
@@ -72,16 +75,20 @@ struct PartnerDetail: View {
                             title: Text("Attention"),
                             message: Text("To make a reservation, you need to log in"),
                             dismissButton: Alert.Button.default(
-                                Text("Press ok here"), action: { shouldRedirectToLogin.toggle() }
+                                Text("Log In"), action: { shouldRedirectToLogin.toggle() }
                             )
                         )
-                    }.sheet(isPresented:$shouldRedirectToLogin , content: {
-                        LoginView()
+                    }.sheet(isPresented:$shouldRedirectToLogin ,onDismiss: {
+                        if  UserDefaults.standard.object(forKey: "currentUser") != nil{
+                            isConnected.toggle()
+                        }
+                    }, content: {
+                        LoginView()                    
                     }).sheet(isPresented:$isConnected , content: {
                         ReservationView(partner: partner)
                     })
                 }
-            }.padding(.top,-100)
+            }.padding()
         }.onAppear{
             setImage(from: partner.photoUrl)
         }
@@ -89,11 +96,11 @@ struct PartnerDetail: View {
     
     func setImage(from url: String?) {
         guard let imageURL = URL(string: url ?? "https://shorturl.at/psuP8") else { return }
-
-            // just not to cause a deadlock in UI!
+        
+        // just not to cause a deadlock in UI!
         DispatchQueue.global().async {
             guard let imageData = try? Data(contentsOf: imageURL) else { return }
-
+            
             let image = UIImage(data: imageData)
             DispatchQueue.main.async {
                 if image != nil {
@@ -128,8 +135,8 @@ struct MapView: View {
     var coordinate: CLLocationCoordinate2D
     @State private var region = MKCoordinateRegion()
     @State private var markers: [Marker] = []
-
-
+    
+    
     var body: some View {
         Map(coordinateRegion: $region,showsUserLocation: false,  annotationItems: markers){
             marker in marker.location
@@ -139,11 +146,11 @@ struct MapView: View {
         }
     }
     private func setRegion(_ coordinate: CLLocationCoordinate2D) {
-           region = MKCoordinateRegion(
-               center: coordinate,
-               span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-           )
-       }
+        region = MKCoordinateRegion(
+            center: coordinate,
+            span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
+        )
+    }
 }
 
 

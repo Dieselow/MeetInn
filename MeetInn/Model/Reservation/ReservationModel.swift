@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ReservationModel: Hashable,Codable {
+struct ReservationModel: Hashable, Codable {
     var owner: String
     var invitedUsers: Array<String>?
 }

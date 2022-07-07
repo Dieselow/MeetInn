@@ -17,7 +17,7 @@ protocol APIResource {
  
 extension APIResource {
     var url: URL {
-        var components = URLComponents(string: "http://20.79.84.247/api/v1")!
+        var components = URLComponents(string: "http://127.0.0.1:3001/api/v1")!
         components.path += methodPath
         components.queryItems = []
         if let filter = filter {
